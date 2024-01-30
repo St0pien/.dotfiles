@@ -12,14 +12,7 @@ end
 
 -- This is where you actually apply your config choices
 
--- For example, changing the color scheme:
-local scheme = wezterm.get_builtin_color_schemes()['Dark+']
--- scheme.background = 'black'
-
-config.color_schemes = {
-    ['Dark+mod'] = scheme
-}
-
+-- Disable windows bell
 config.audible_bell = "Disabled"
 
 -- config.color_scheme = 'darkside'
@@ -49,6 +42,8 @@ config.background = {
   }
 }
 
+-- When opening inside windows switch to local domain
+
 FromContextMenu = false
 
 wezterm.on('gui-startup', function(cmd)
@@ -77,6 +72,9 @@ wezterm.on('gui-attached', function(domain)
   end
 end)
 
+-- KeyBindings
+config.keys = {
+}
 
 -- and finally, return the configuration to wezterm
 return config
