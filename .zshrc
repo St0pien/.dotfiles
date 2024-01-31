@@ -105,7 +105,7 @@ source ~/antigen.zsh
 
 antigen bundle git
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle z-shell/fast-syntax-highlighting
+#antigen bundle z-shell/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
@@ -115,3 +115,8 @@ export TERM=xterm-256color
 
 alias r='~/repos/dotfiles/shcripts/repofinder.sh'
 alias t='~/repos/dotfiles/shcripts/tmuxfinder.sh'
+
+# Key bindings
+bindkey -s ^f "r\n"
+bindkey -s ^t "t\n" 
+bindkey -s ^x "tmux kill-server\n"
