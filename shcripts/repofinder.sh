@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Fuzzy find workspace
-chosendir=$(find ~/repos -type d |fzf)
+chosendir=$(find $REPOS -type d |fzf)
 
 if [[ -z $chosendir ]]; then
 	exit 0;

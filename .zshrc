@@ -113,8 +113,11 @@ antigen apply
 # FIX TMUX ZSH SUGGESTION COLOR
 export TERM=xterm-256color
 
-alias r='~/repos/dotfiles/shcripts/repofinder.sh'
-alias t='~/repos/dotfiles/shcripts/tmuxfinder.sh'
+# vars and aliases
+export REPOS=~/repos/
+
+alias r='$REPOS/dotfiles/shcripts/repofinder.sh'
+alias t='$REPOS/dotfiles/shcripts/tmuxfinder.sh'
 
 # Key bindings
 bindkey -s ^f "r\n"
