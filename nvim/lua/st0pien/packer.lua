@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- Telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
         -- or                            , branch = '0.1.x',
@@ -18,17 +19,22 @@ return require('packer').startup(function(use)
         requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
     }
 
+    -- Utilities
+    use('theprimeagen/harpoon')
+    use('mbbill/undotree')
+    use('tpope/vim-fugitive')
+
+
+    -- color scheme
     use 'RRethy/nvim-base16'
     use 'metalelf0/base16-black-metal-scheme'
 
+
+    -- parsing syntax highlighting and lsp
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-
-    use('theprimeagen/harpoon')
-    use('mbbill/undotree')
-    use('tpope/vim-fugitive')
 
     use {
         "williamboman/mason.nvim",
@@ -61,4 +67,12 @@ return require('packer').startup(function(use)
 
     -- icons
     use 'nvim-tree/nvim-web-devicons'
+
+    -- debugging
+    use 'mfussenegger/nvim-dap'
+    use 'rcarriga/nvim-dap-ui'
+    use 'theHamsta/nvim-dap-virtual-text'
+    use 'nvim-telescope/telescope-dap.nvim'
+
+    use 'mfussenegger/nvim-dap-python'
 end)
