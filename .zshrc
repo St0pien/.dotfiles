@@ -4,6 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export PATH="$HOME/neovim/bin:$PATH"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -114,10 +116,10 @@ antigen apply
 export TERM=xterm-256color
 
 # vars and aliases
-export REPOS=~/repos/
+export REPOS=~/repos
 
-alias r='$REPOS/dotfiles/shcripts/repofinder.sh'
-alias t='$REPOS/dotfiles/shcripts/tmuxfinder.sh'
+alias r='$REPOS/.dotfiles/shcripts/repofinder.sh'
+alias t='$REPOS/.dotfiles/shcripts/tmuxfinder.sh'
 
 # Key bindings
 bindkey -s ^f "r\n"
