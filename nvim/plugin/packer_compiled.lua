@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/st0pien/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["autoclose.nvim"] = {
+    loaded = true,
+    path = "/home/st0pien/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
+    url = "https://github.com/m4xshen/autoclose.nvim"
+  },
   ["base16-black-metal-scheme"] = {
     loaded = true,
     path = "/home/st0pien/.local/share/nvim/site/pack/packer/start/base16-black-metal-scheme",
