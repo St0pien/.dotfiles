@@ -13,6 +13,11 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
+    use {
+        "nvim-telescope/telescope-file-browser.nvim",
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    }
+
     use 'RRethy/nvim-base16'
     use 'metalelf0/base16-black-metal-scheme'
 
@@ -53,4 +58,7 @@ return require('packer').startup(function(use)
     use('MunifTanjim/prettier.nvim')
 
     use 'm4xshen/autoclose.nvim'
+
+    -- icons
+    use 'nvim-tree/nvim-web-devicons'
 end)
