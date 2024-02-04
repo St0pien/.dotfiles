@@ -15,21 +15,48 @@ end
 -- Disable windows bell
 config.audible_bell = "Disabled"
 
--- config.color_scheme = 'darkside'
 config.color_scheme = 'Red Planet'
 
 config.enable_tab_bar = false
 
-config.font = wezterm.font 'Cascadia Mono'
+config.font = wezterm.font('Cascadia Mono', { italic = false })
 config.font_size = 13
+config.font_rules = {
+  {
+    intensity = 'Bold',
+    italic = true,
+    font = wezterm.font {
+      family = 'Cascadia Mono',
+      weight = 'Bold',
+      italic = false
+    },
+  },
+  {
+    italic = true,
+    intensity = 'Half',
+    font = wezterm.font {
+      family = 'Cascadia Mono',
+      weight = 'DemiBold',
+      italic = false
+    },
+  },
+  {
+    italic = true,
+    intensity = 'Normal',
+    font = wezterm.font {
+      family = 'Cascadia Mono',
+      italic = false
+    },
+  },
+}
 
 config.initial_rows = 30
 config.initial_cols = 120
 
 config.default_domain = 'WSL:Ubuntu'
 
--- config.window_background_opacity = 1
--- config.window_background_image = 'C:\\Users\\Kuba\\Pictures\\term.png'
+config.window_background_opacity = 1
+config.window_background_image = 'C:\\Users\\Kuba\\Pictures\\term.png'
 
 config.background = {
   {
@@ -65,7 +92,7 @@ wezterm.on('gui-attached', function(domain)
 
     local windows = wezterm.mux:all_windows()
     for _, window in pairs(windows) do
-      if (window:get_title() ~= 'fromcontext')then
+      if (window:get_title() ~= 'fromcontext') then
         print(window:active_tab():active_pane():send_text('exit\n'))
       end
     end

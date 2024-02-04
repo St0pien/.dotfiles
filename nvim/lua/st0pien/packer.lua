@@ -23,11 +23,17 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
-
+    use('numToStr/Comment.nvim')
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    })
+    use('HiPhish/rainbow-delimiters.nvim')
 
     -- color scheme
     use 'RRethy/nvim-base16'
-    use 'metalelf0/base16-black-metal-scheme'
+    -- use 'metalelf0/base16-black-metal-scheme'
+    use 'datsfilipe/min-theme.nvim'
 
 
     -- parsing syntax highlighting and lsp
