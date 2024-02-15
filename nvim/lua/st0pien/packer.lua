@@ -35,6 +35,10 @@ return require('packer').startup(function(use)
     -- use 'metalelf0/base16-black-metal-scheme'
     use 'datsfilipe/min-theme.nvim'
 
+    use  'xiyaowong/transparent.nvim'
+
+
+
 
     -- parsing syntax highlighting and lsp
     use {

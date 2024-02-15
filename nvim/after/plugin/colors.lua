@@ -1,3 +1,6 @@
+require('transparent')
+
+
 function ColorMyPencils(color)
     require('base16-colorscheme').with_config({
         telescope = false
