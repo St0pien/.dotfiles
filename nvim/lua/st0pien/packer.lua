@@ -74,6 +74,7 @@ return require('packer').startup(function(use)
     use('MunifTanjim/prettier.nvim')
 
     use 'm4xshen/autoclose.nvim'
+    use 'windwp/nvim-ts-autotag'
 
     -- icons
     use 'nvim-tree/nvim-web-devicons'
