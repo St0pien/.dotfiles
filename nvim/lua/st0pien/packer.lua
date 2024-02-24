@@ -35,10 +35,12 @@ return require('packer').startup(function(use)
     -- use 'metalelf0/base16-black-metal-scheme'
     use 'datsfilipe/min-theme.nvim'
 
-    use  'xiyaowong/transparent.nvim'
+    use 'xiyaowong/transparent.nvim'
 
-
-
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
     -- parsing syntax highlighting and lsp
     use {
@@ -76,6 +78,11 @@ return require('packer').startup(function(use)
     use 'm4xshen/autoclose.nvim'
     use 'windwp/nvim-ts-autotag'
 
+    -- using packer.nvim
+    use {
+        'nmac427/guess-indent.nvim',
+        config = function() require('guess-indent').setup {} end,
+    }
     -- icons
     use 'nvim-tree/nvim-web-devicons'
 

@@ -71,34 +71,6 @@ config.background = {
 
 -- When opening inside windows switch to local domain
 
-FromContextMenu = false
-
-wezterm.on('gui-startup', function(cmd)
-  if (cmd.cwd ~= nil and string.match(cmd.cwd, '%u:\\')) then
-    FromContextMenu = true
-    local tab, pane, window = wezterm.mux.spawn_window({
-      domain = { DomainName = 'local' },
-      args = cmd.args
-    })
-
-    window:set_title('fromcontext')
-  end
-end
-)
-
-wezterm.on('gui-attached', function(domain)
-  if (FromContextMenu) then
-    FromContextMenu = false
-
-    local windows = wezterm.mux:all_windows()
-    for _, window in pairs(windows) do
-      if (window:get_title() ~= 'fromcontext') then
-        print(window:active_tab():active_pane():send_text('exit\n'))
-      end
-    end
-  end
-end)
-
 -- KeyBindings
 config.keys = {
 }

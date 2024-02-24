@@ -22,6 +22,13 @@ dap.listeners.after.event_exited['dapui_config'] = function()
     ui.close()
 end
 
+-- Debug signs config
+vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#ff6666', bg = 0 })
+vim.api.nvim_set_hl(0, 'DapStopped', { bg = '#1a1a1a' })
+
+vim.fn.sign_define('DapBreakpoint', { text = '⏺', texthl = 'DapBreakpoint' })
+vim.fn.sign_define('DapStopped', { text = '➤', linehl = 'DapStopped' })
+
 
 -- virtual text
 require('nvim-dap-virtual-text').setup()
@@ -36,10 +43,8 @@ dapPython.setup('~/.virtualenvs/debugpy/bin/python')
 dap.adapters.cppdbg = {
     id = 'cppdbg',
     type = 'executable',
-    command =  vim.fn.stdpath('data') .. '/mason/bin/OpenDebugAD7'
+    command = vim.fn.stdpath('data') .. '/mason/bin/OpenDebugAD7'
 }
-
-print(dap.adapters.cppdbg.command)
 
 dap.configurations.cpp = {
     {
