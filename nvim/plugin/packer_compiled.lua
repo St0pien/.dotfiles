@@ -175,6 +175,11 @@ _G.packer_plugins = {
     path = "/home/st0pien/.local/share/nvim/site/pack/packer/start/nvim-surround",
     url = "https://github.com/kylechui/nvim-surround"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/st0pien/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/st0pien/.local/share/nvim/site/pack/packer/start/nvim-treesitter",

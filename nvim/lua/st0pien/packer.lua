@@ -19,6 +19,13 @@ return require('packer').startup(function(use)
         requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
     }
 
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
+    }
+
     -- Utilities
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
