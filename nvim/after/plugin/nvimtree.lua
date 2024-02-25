@@ -10,7 +10,6 @@ require("nvim-tree").setup()
 
 local api = require('nvim-tree.api')
 
-vim.keymap.set('n', '<leader>e', api.tree.toggle)
+vim.keymap.set('n', '<leader>e', function() api.tree.toggle({ find_file = true }) end)
 
-vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#444444"})
-
+vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#444444" })
