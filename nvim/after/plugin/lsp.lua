@@ -35,6 +35,7 @@ require('mason-lspconfig').setup({
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
+local lspkind = require('lspkind')
 
 cmp.setup({
     sources = {
@@ -44,7 +45,18 @@ cmp.setup({
         { name = 'luasnip', keyword_length = 2 },
         { name = 'buffer',  keyword_length = 3 },
     },
-    formatting = lsp_zero.cmp_format(),
+    formatting = {
+        fields = {'abbr', 'kind', 'menu'},
+        format = lspkind.cmp_format({
+            preset = 'codicons',
+            mode = 'symbol_text',
+            maxwidth = 50,   -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            -- can also be a function to dynamically calculate max width such as
+            -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+            ellipsis_char = '...',    -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+            show_labelDetails = false, -- show labelDetails in menu. Disabled by default
+        })
+    },
     mapping = cmp.mapping.preset.insert({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),

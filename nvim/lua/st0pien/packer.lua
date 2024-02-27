@@ -77,6 +77,8 @@ return require('packer').startup(function(use)
         }
     }
 
+    use 'onsails/lspkind.nvim'
+
     -- Formatting stuff
 
     use('jose-elias-alvarez/null-ls.nvim')

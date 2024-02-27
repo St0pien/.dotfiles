@@ -22,6 +22,11 @@ require 'nvim-treesitter.configs'.setup {
         additional_vim_regex_highlighting = false,
     },
     autotag = {
-        enable = true
-    }
+        enable = true,
+        filetypes = {
+            'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue', 'tsx', 'jsx', 'rescript',
+            'css', 'lua', 'xml', 'php', 'markdown'
+        },
+    },
+    indent = { enable = true },
 }
