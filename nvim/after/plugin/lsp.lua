@@ -24,7 +24,7 @@ end)
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'tsserver', 'rust_analyzer', 'eslint', 'lua_ls', 'clangd', 'tailwindcss', 'python' },
+    ensure_installed = { 'tsserver', 'rust_analyzer', 'eslint', 'lua_ls', 'clangd', 'tailwindcss' },
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
@@ -47,14 +47,14 @@ cmp.setup({
         { name = 'buffer',  keyword_length = 3 },
     },
     formatting = {
-        fields = {'abbr', 'kind', 'menu'},
+        fields = { 'abbr', 'kind', 'menu' },
         format = lspkind.cmp_format({
             preset = 'codicons',
             mode = 'symbol_text',
-            maxwidth = 50,   -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
             -- can also be a function to dynamically calculate max width such as
             -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
-            ellipsis_char = '...',    -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+            ellipsis_char = '...',     -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
             show_labelDetails = false, -- show labelDetails in menu. Disabled by default
         })
     },
