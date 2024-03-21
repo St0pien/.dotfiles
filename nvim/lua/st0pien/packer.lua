@@ -102,4 +102,9 @@ return require('packer').startup(function(use)
     use 'nvim-telescope/telescope-dap.nvim'
 
     use 'mfussenegger/nvim-dap-python'
+    use {
+        'mrcjkb/rustaceanvim',
+        version = '^4', -- Recommended
+        ft = { 'rust' },
+    }
 end)

@@ -71,6 +71,31 @@ dap.configurations.cpp = {
     },
 }
 
+-- Rust
+dap.adapters.lldb = {
+    type = 'server',
+    port = "${port}",
+    executable = {
+        -- CHANGE THIS to your path!
+        command = vim.fn.stdpath('data') .. '/mason/bin/codelldb',
+        args = { "--port", "${port}" },
+    }
+}
+
+dap.configurations.rust = {
+
+    {
+        name = "Debug file",
+        type = "lldb",
+        request = "launch",
+        program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = "${workspaceFolder}"
+    }
+}
+
+
 vim.keymap.set('n', '<F5>', function()
     local dapvscode = require('dap.ext.vscode')
     if vim.fn.filereadable('.vscode/launch.json') then
