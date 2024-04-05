@@ -31,7 +31,15 @@ vim.fn.sign_define('DapStopped', { text = '➤', linehl = 'DapStopped' })
 
 
 -- virtual text
-require('nvim-dap-virtual-text').setup()
+local virt = require('nvim-dap-virtual-text')
+virt.setup({
+    clear_on_continue = false
+})
+
+vim.keymap.set('n', '<leader>vrt', function()
+    vim.api.nvim_buf_clear_namespace(0, -1, 0, -1)
+    require('rainbow-delimiters').enable();
+end)
 
 vim.keymap.set('n', '<leader>db', ui.toggle)
 
