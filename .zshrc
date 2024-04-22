@@ -109,6 +109,7 @@ antigen bundle git
 antigen bundle zsh-users/zsh-autosuggestions
 #antigen bundle z-shell/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle jeffreytse/zsh-vi-mode
 
 antigen apply
 
@@ -121,13 +122,8 @@ export REPOS=~/repos
 alias r='$REPOS/.dotfiles/shcripts/repofinder.sh'
 alias t='$REPOS/.dotfiles/shcripts/tmuxfinder.sh'
 
-# Key bindings
-bindkey -s ^f "r\n"
-bindkey -s ^t "t\n" 
-bindkey -s ^x "tmux kill-server\n"
-
 # pnpm
-export PNPM_HOME="/home/st0pien/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -135,8 +131,16 @@ esac
 # pnpm end
 
 # bun completions
-[ -s "/home/st0pien/.bun/_bun" ] && source "/home/st0pien/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+function zvm_after_init() {
+  # Key bindings
+  bindkey -s ^f "r\n"
+  bindkey -s ^t "t\n" 
+  bindkey -s ^x "tmux kill-server\n"
+}
