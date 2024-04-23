@@ -19,6 +19,8 @@ return require('packer').startup(function(use)
         requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
     }
 
+    use 'nvim-telescope/telescope-ui-select.nvim'
+
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
@@ -108,4 +110,11 @@ return require('packer').startup(function(use)
         version = '^4', -- Recommended
         ft = { 'rust' },
     }
+
+    use {
+        "microsoft/vscode-js-debug",
+        opt = true,
+        run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+    }
+    use { "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } }
 end)
