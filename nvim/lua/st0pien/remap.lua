@@ -16,13 +16,14 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww $REPOS/.dotfiles/shcripts/repofinder.sh<CR>")
+vim.keymap.set("n", "<leader>tm", "<cmd>silent !tmux neww $REPOS/.dotfiles/shcripts/tmuxfinder.sh<CR>")
 
 vim.keymap.set("n", "<leader>fo", function()
     vim.lsp.buf.format()
 end)
 
 -- System clipboard
-vim.keymap.set({'n', 'v'}, '<leader>y', '\"+y')
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '\"+y')
 vim.keymap.set('n', '<leader>Y', '\"+Y')
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -32,4 +33,3 @@ vim.keymap.set("n", "=", "<cmd>vertical resize +5<cr>")
 vim.keymap.set("n", "-", "<cmd>vertical resize -5<cr>")
 vim.keymap.set("n", "+", "<cmd>horizontal resize +5<cr>")
 vim.keymap.set("n", "_", "<cmd>horizontal resize -5<cr>")
-
