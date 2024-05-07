@@ -82,9 +82,8 @@ return require('packer').startup(function(use)
     use 'onsails/lspkind.nvim'
 
     -- Formatting stuff
-
-    use('jose-elias-alvarez/null-ls.nvim')
-    use('MunifTanjim/prettier.nvim')
+    use 'mfussenegger/nvim-lint'
+    use 'mhartington/formatter.nvim'
 
     use 'm4xshen/autoclose.nvim'
     use 'windwp/nvim-ts-autotag'

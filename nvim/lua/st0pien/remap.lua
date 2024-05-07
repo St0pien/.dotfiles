@@ -18,9 +18,9 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww $REPOS/.dotfiles/shcripts/repofinder.sh<CR>")
 vim.keymap.set("n", "<leader>tm", "<cmd>silent !tmux neww $REPOS/.dotfiles/shcripts/tmuxfinder.sh<CR>")
 
-vim.keymap.set("n", "<leader>fo", function()
-    vim.lsp.buf.format()
-end)
+-- vim.keymap.set("n", "<leader>fo", function()
+--     vim.lsp.buf.format()
+-- end)
 
 -- System clipboard
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '\"+y')
