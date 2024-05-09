@@ -28,6 +28,9 @@ require("formatter").setup({
 			require("formatter.filetypes.typescriptreact").prettierd,
 			require("formatter.filetypes.typescriptreact").eslint_d,
 		},
+		python = {
+			require("formatter.filetypes.python").autopep8,
+		},
 
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
