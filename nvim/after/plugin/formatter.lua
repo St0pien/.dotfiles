@@ -32,6 +32,10 @@ require("formatter").setup({
 			require("formatter.filetypes.python").autopep8,
 		},
 
+		cpp = {
+			require("formatter.filetypes.cpp").clangformat,
+		},
+
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
 		["*"] = {
