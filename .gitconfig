@@ -1,0 +1,20 @@
+[user]
+name = Jakub Stępień
+email = jstepien50@gmail.com
+username = St0pien
+signingkey = 6DB8EB0C386CE74D
+
+[init]
+defaultBranch = main
+
+[commit]
+gpgsign = true
+
+[tag]
+gpgsign = true
+
+[pull]
+rebase = true
+
+[gpg]
+program = gpg

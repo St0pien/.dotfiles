@@ -1,3 +1,5 @@
+export GPG_TTY=$(tty)
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -136,7 +138,6 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
 
 function zvm_after_init() {
   # Key bindings
