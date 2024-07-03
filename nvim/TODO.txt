@@ -1,0 +1,6 @@
+- Debugging
+- Linting
+- undotree
+- harpoon
+- fugitive
+- troubles
