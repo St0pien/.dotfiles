@@ -1,6 +1,2 @@
 - Debugging
-- Linting
-- undotree
-- harpoon
-- fugitive
-- troubles
+- Watch Fugitive screen casts

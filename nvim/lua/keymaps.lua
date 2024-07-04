@@ -12,7 +12,7 @@ end, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', function()
   vim.diagnostic.jump { count = 1 }
 end, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>r', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -37,3 +37,41 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Move line up/down
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move block up' })
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move block down' })
+
+-- Freeze cursor during line joining
+vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join line below' })
+
+-- Keep cursor centered
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- Paste into
+vim.keymap.set('x', '<leader>p', [["_dP]])
+
+-- System clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])
+
+-- Fuzzy finders
+vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww $REPOS/.dotfiles/shcripts/repofinder.sh<CR>')
+vim.keymap.set('n', '<leader>tm', '<cmd>silent !tmux neww $REPOS/.dotfiles/shcripts/tmuxfinder.sh<CR>')
+
+-- quick/location navigation
+vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>zz')
+vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>zz')
+vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
+vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
+
+-- window resizing
+vim.keymap.set('n', '<M-l>', '<cmd>vertical resize +5<cr>')
+vim.keymap.set('n', '<M-h>', '<cmd>vertical resize -5<cr>')
+vim.keymap.set('n', '<M-j>', '<cmd>horizontal resize +5<cr>')
+vim.keymap.set('n', '<M-k>', '<cmd>horizontal resize -5<cr>')
+
+vim.keymap.set('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
