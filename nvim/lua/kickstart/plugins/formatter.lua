@@ -34,6 +34,11 @@ return { -- Autoformat
       javascriptreact = { { 'prettierd', 'prettier' }, 'eslint_d' },
       typescript = { { 'prettierd', 'prettier' }, 'eslint_d' },
       typescriptreact = { { 'prettierd', 'prettier' }, 'eslint_d' },
+
+      json = { { 'prettierd', 'prettier' } },
+
+      cpp = { 'clang-format' },
+      c = { 'clang-format' },
     },
   },
 }

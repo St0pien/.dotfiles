@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # Fuzzy find workspace
-chosendir=$(find $REPOS -type d -not -path "*node_modules*" -not -path "*.git*" |fzf)
+# chosendir=$(find $REPOS -type d -not -path "*node_modules*" -not -path "*.git*" |fzf)
+chosendir=$(fdfind -H -E node_modules -E .git . $REPOS |fzf)
 
 if [[ -z $chosendir ]]; then
 	exit 0;
