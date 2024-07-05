@@ -75,3 +75,5 @@ vim.keymap.set('n', '<M-j>', '<cmd>horizontal resize +5<cr>')
 vim.keymap.set('n', '<M-k>', '<cmd>horizontal resize -5<cr>')
 
 vim.keymap.set('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+vim.keymap.set('n', '<leader>gi', '<cmd>Sleuth<CR>', { desc = '[G]uess [I]ndent' })
