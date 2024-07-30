@@ -185,6 +185,7 @@ return { -- LSP Configuration & Plugins
         },
       },
       tailwindcss = {},
+      yamlls = {},
     }
 
     -- Ensure the servers and tools above are installed

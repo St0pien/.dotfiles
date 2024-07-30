@@ -40,6 +40,8 @@ return { -- Autoformat
 
       cpp = { 'clang-format' },
       c = { 'clang-format' },
+
+      yaml = {'yamlfmt'}
     },
   },
 }
