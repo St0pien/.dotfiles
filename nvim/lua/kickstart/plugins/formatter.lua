@@ -30,18 +30,18 @@ return { -- Autoformat
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
-      javascript = { { 'prettierd', 'prettier' }, 'eslint_d' },
-      javascriptreact = { { 'prettierd', 'prettier' }, 'eslint_d' },
-      typescript = { { 'prettierd', 'prettier' }, 'eslint_d' },
-      typescriptreact = { { 'prettierd', 'prettier' }, 'eslint_d' },
-      css = { { 'prettierd', 'prettier' }, 'eslint_d' },
+      javascript = { 'prettierd', 'eslint_d' },
+      javascriptreact = { 'prettierd', 'eslint_d' },
+      typescript = { 'prettierd', 'eslint_d' },
+      typescriptreact = { 'prettierd', 'eslint_d' },
+      css = { 'prettierd', 'eslint_d' },
 
-      json = { { 'prettierd', 'prettier' } },
+      json = { 'prettierd', 'prettier', stop_after_first = true },
 
       cpp = { 'clang-format' },
       c = { 'clang-format' },
 
-      yaml = {'yamlfmt'}
+      yaml = { 'yamlfmt' },
     },
   },
 }
