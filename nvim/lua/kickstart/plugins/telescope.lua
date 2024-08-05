@@ -77,7 +77,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
     vim.keymap.set('n', '<leader>ff', function()
-      builtin.find_files { hidden = true, file_ignore_patterns = { '.*/node_modules/.*' } }
+      builtin.find_files { hidden = true, file_ignore_patterns = { '.*/node_modules/.*', '.git/' } }
     end, { desc = '[F]ind [F]iles' })
     vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
     vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind current [W]ord' })
