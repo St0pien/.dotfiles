@@ -21,7 +21,8 @@ return {
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
 
-    -- Add your own debuggers here
+    -- Add your own debuggers here,
+    'mfussenegger/nvim-dap-python',
   },
   config = function()
     local dap = require 'dap'
@@ -34,46 +35,7 @@ return {
 
       -- You can provide additional configuration to the handlers,
       -- see mason-nvim-dap README for more information
-      handlers = {
-        -- function(config)
-        --   require('mason-nvim-dap').default_setup(config)
-        -- end,
-        --
-        -- cppdbg = function(config)
-        --   config.adapters = {
-        --     id = 'cppdbg',
-        --     type = 'executable',
-        --     command = vim.fn.stdpath 'data' .. '/mason/bin/OpenDebugAD7',
-        --   }
-        --
-        --   config.configurations = {
-        --     {
-        --       name = 'Launch file my custom',
-        --       type = 'cppdbg',
-        --       request = 'launch',
-        --       program = function()
-        --         return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-        --       end,
-        --       cwd = '${workspaceFolder}',
-        --       stopAtEntry = true,
-        --     },
-        --     {
-        --       name = 'Attach to gdbserver :1234',
-        --       type = 'cppdbg',
-        --       request = 'launch',
-        --       MIMode = 'gdb',
-        --       miDebuggerServerAddress = 'localhost:1234',
-        --       miDebuggerPath = '/usr/bin/gdb',
-        --       cwd = '${workspaceFolder}',
-        --       program = function()
-        --         return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-        --       end,
-        --     },
-        --   }
-        --
-        --   require('mason-nvim-dap').default_setup(config)
-        -- end,
-      },
+      handlers = {},
 
       -- You'll need to check that you have the required things installed
       -- online, please don't ask me how to install them :)
@@ -138,5 +100,7 @@ return {
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
+
+    require('dap-python').setup '~/.virtualenvs/debugpy/bin/python3'
   end,
 }
