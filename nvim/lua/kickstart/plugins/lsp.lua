@@ -167,7 +167,7 @@ return { -- LSP Configuration & Plugins
       --    https://github.com/pmizio/typescript-tools.nvim
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
-      tsserver = {},
+      ts_ls = {},
       pylsp = {},
       --
       gopls = {},
@@ -208,15 +208,6 @@ return { -- LSP Configuration & Plugins
     require('mason-lspconfig').setup {
       handlers = {
         function(server_name)
-          -- Workaround
-          if server_name == 'tsserver' then
-            server_name = 'ts_ls'
-          end
-
-          if server_name == 'pyright' then
-            print 'hi mark'
-          end
-
           local server = servers[server_name] or {}
           -- This handles overriding only values explicitly passed
           -- by the server configuration above. Useful when disabling
