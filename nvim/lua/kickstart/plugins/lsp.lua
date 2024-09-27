@@ -170,7 +170,7 @@ return { -- LSP Configuration & Plugins
       tsserver = {},
       pylsp = {},
       --
-
+      gopls = {},
       lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},

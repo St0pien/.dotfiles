@@ -42,6 +42,8 @@ return { -- Autoformat
       c = { 'clang-format' },
 
       yaml = { 'yamlfmt' },
+
+      go = { 'gofmt' },
     },
   },
 }

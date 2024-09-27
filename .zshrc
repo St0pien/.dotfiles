@@ -145,3 +145,6 @@ function zvm_after_init() {
   bindkey -s ^t "t\n" 
   bindkey -s ^x "tmux kill-server\n"
 }
+
+# Go
+export PATH=$PATH:/usr/local/go/bin
