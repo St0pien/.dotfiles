@@ -171,6 +171,7 @@ return { -- LSP Configuration & Plugins
       pylsp = {},
       --
       gopls = {},
+      hls = {},
       lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},

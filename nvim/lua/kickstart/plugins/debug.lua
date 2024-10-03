@@ -103,5 +103,19 @@ return {
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     require('dap-python').setup '~/.virtualenvs/debugpy/bin/python3'
+
+    require('dap-go').setup {
+      dap_configurations = {
+        {
+          type = 'go',
+          name = 'Attach remote',
+          mode = 'remote',
+          request = 'attach',
+        },
+      },
+      delve = {
+        port = 2345,
+      },
+    }
   end,
 }

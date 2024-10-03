@@ -147,4 +147,6 @@ function zvm_after_init() {
 }
 
 # Go
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin/
+
+[ -f "/home/st0pien/.ghcup/env" ] && . "/home/st0pien/.ghcup/env" # ghcup-env
