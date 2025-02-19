@@ -6,7 +6,7 @@ export GPG_TTY=$(tty)
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export PATH="$HOME/.local/bin:$HOME/neovim/bin:$PATH"
+export PATH="$HOME/.asdf/shims:$HOME/.local/bin:$HOME/neovim/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -74,7 +74,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -124,29 +124,10 @@ export REPOS=~/repos
 alias r='$REPOS/.dotfiles/shcripts/repofinder.sh'
 alias t='$REPOS/.dotfiles/shcripts/tmuxfinder.sh'
 
-# pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 function zvm_after_init() {
   # Key bindings
   bindkey -s ^f "r\n"
   bindkey -s ^t "t\n" 
   bindkey -s ^x "tmux kill-server\n"
+  bindkey ^k end-of-line
 }
-
-# Go
-export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin/
-
-[ -f "/home/st0pien/.ghcup/env" ] && . "/home/st0pien/.ghcup/env" # ghcup-env
