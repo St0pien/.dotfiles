@@ -131,3 +131,11 @@ function zvm_after_init() {
   bindkey -s ^x "tmux kill-server\n"
   bindkey ^k end-of-line
 }
+
+# pnpm
+export PNPM_HOME="/home/st0pien/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
