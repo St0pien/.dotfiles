@@ -10,7 +10,7 @@ return { -- You can easily change to a different colorscheme.
       base00 = '#000000',
       base01 = '#1f1d2e',
       base02 = '#23232a',
-      base03 = '#6e6a70',
+      base03 = '#2e2a30',
       base04 = '#908c9a',
       base05 = '#e0dee4',
       base06 = '#e0dee4',
