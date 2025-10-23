@@ -10,7 +10,12 @@ return {
     vim.opt.termguicolors = true
 
     -- empty setup using defaults
-    require('nvim-tree').setup()
+    require('nvim-tree').setup {
+      git = {
+        enable = true,
+        ignore = false,
+      },
+    }
 
     local api = require 'nvim-tree.api'
 
